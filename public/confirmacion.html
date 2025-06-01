@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmación de Pago</title>
+</head>
+<body>
+    <div style="text-align:center; padding: 50px;">
+        <h2 id="titulo"></h2>
+        <p id="mensaje"></p>
+        <a href="index.html">Volver al inicio</a>
+    </div>
+
+    <script>
+        const estado = sessionStorage.getItem("webpay_estado");
+
+        const titulo = document.getElementById("titulo");
+        const mensaje = document.getElementById("mensaje");
+
+        if (estado === "exito") {
+            titulo.textContent = "¡Pago Exitoso!";
+            mensaje.textContent = "Gracias por tu compra. Recibirás una confirmación pronto.";
+            localStorage.removeItem("carrito"); // Vacía el carrito después de la compra
+        } else {
+            titulo.textContent = "Pago Rechazado";
+            mensaje.textContent = "El pago fue cancelado o no se completó.";
+        }
+
+        // Limpieza final
+        sessionStorage.removeItem("webpay_estado");
+        sessionStorage.removeItem("webpay_monto");
+        sessionStorage.removeItem("webpay_orden");
+    </script>
+</body>
+</html>

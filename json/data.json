@@ -1,0 +1,252 @@
+[
+  {
+    "codigo_producto": "HM-001",
+    "marca": "Tramontina",
+    "codigo": "TRM-1111",
+    "nombre": "Martillo de carpintero 16 oz",
+    "precio": [{"valor": 8990, "fecha": "2025-05-23"}],
+    "imagen": "HM-001.jpg",
+    "categoria": "manual",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "HM-002",
+    "marca": "Stanley",
+    "codigo": "STN-1122",
+    "nombre": "Destornillador plano 6mm",
+    "precio": [{"valor": 3990, "fecha": "2025-05-23"}],
+    "imagen": "HM-002.jpg",
+    "categoria": "manual",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "HM-003",
+    "marca": "Bahco",
+    "codigo": "BHC-1133",
+    "nombre": "Llave ajustable 10 pulgadas",
+    "precio": [{"valor": 7990, "fecha": "2025-05-23"}],
+    "imagen": "HM-003.jpg",
+    "categoria": "manual",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "HE-001",
+    "marca": "Bosch",
+    "codigo": "BOS-1234",
+    "nombre": "Taladro percutor 650W",
+    "precio": [{"valor": 45990, "fecha": "2025-05-23"}],
+    "imagen": "HE-001.jpg",
+    "categoria": "manual",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "HE-002",
+    "marca": "Makita",
+    "codigo": "MAK-2345",
+    "nombre": "Sierra circular 7-1/4 pulgadas",
+    "precio": [{"valor": 89990, "fecha": "2025-05-23"}],
+    "imagen": "HE-002.jpg",
+    "categoria": "manual",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "HE-003",
+    "marca": "DeWalt",
+    "codigo": "DWT-3456",
+    "nombre": "Lijadora orbital 280W",
+    "precio": [{"valor": 52990, "fecha": "2025-05-23"}],
+    "imagen": "HE-003.jpg",
+    "categoria": "manual",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "MC-001",
+    "marca": "Melon",
+    "codigo": "MLN-4567",
+    "nombre": "Saco de cemento 25 kg",
+    "precio": [{"valor": 4990, "fecha": "2025-05-23"}],
+    "imagen": "MC-001.jpg",
+    "categoria": "basico",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "MC-002",
+    "marca": "Constructora Sur",
+    "codigo": "CSR-5678",
+    "nombre": "Bolsa de arena 30 kg",
+    "precio": [{"valor": 2490, "fecha": "2025-05-23"}],
+    "imagen": "MC-002.jpg",
+    "categoria": "basico",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "MC-003",
+    "marca": "BrickCo",
+    "codigo": "BRK-6789",
+    "nombre": "Ladrillo fiscal",
+    "precio": [{"valor": 390, "fecha": "2025-05-23"}],
+    "imagen": "MC-003.jpg",
+    "categoria": "basico",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "MC-004",
+    "marca": "Colorin",
+    "codigo": "CLR-7890",
+    "nombre": "Pintura latex 4L",
+    "precio": [{"valor": 13990, "fecha": "2025-05-23"}],
+    "imagen": "MC-004.jpg",
+    "categoria": "basico",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "MC-005",
+    "marca": "Protect",
+    "codigo": "PRT-8901",
+    "nombre": "Barniz marino 1L",
+    "precio": [{"valor": 5990, "fecha": "2025-05-23"}],
+    "imagen": "MC-005.jpg",
+    "categoria": "basico",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "MC-006",
+    "marca": "Keramik",
+    "codigo": "KRK-9012",
+    "nombre": "Ceramico 33x33 caja 1.8 m2",
+    "precio": [{"valor": 10990, "fecha": "2025-05-23"}],
+    "imagen": "MC-006.jpg",
+    "categoria": "basico",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "ES-001",
+    "marca": "3M",
+    "codigo": "3M-1011",
+    "nombre": "Casco de seguridad industrial",
+    "precio": [{"valor": 6990, "fecha": "2025-05-23"}],
+    "imagen": "ES-001.jpg",
+    "categoria": "seguridad",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "ES-002",
+    "marca": "Ansell",
+    "codigo": "ANS-1112",
+    "nombre": "Guantes de trabajo anticorte",
+    "precio": [{"valor": 2990, "fecha": "2025-05-23"}],
+    "imagen": "ES-002.jpg",
+    "categoria": "seguridad",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "ES-003",
+    "marca": "Uvex",
+    "codigo": "UVX-1213",
+    "nombre": "Lentes de seguridad transparente",
+    "precio": [{"valor": 3990, "fecha": "2025-05-23"}],
+    "imagen": "ES-003.jpg",
+    "categoria": "seguridad",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "ES-004",
+    "marca": "ToolPro",
+    "codigo": "TPR-1314",
+    "nombre": "Cinturon porta herramientas",
+    "precio": [{"valor": 8990, "fecha": "2025-05-23"}],
+    "imagen": "ES-004.jpg",
+    "categoria": "seguridad",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "TA-001",
+    "marca": "Fischer",
+    "codigo": "FIS-1415",
+    "nombre": "Tornillos para concreto 50mm x 50u",
+    "precio": [{"valor": 5990, "fecha": "2025-05-23"}],
+    "imagen": "TA-001.jpg",
+    "categoria": "basico",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "FA-001",
+    "marca": "Loctite",
+    "codigo": "LOC-1516",
+    "nombre": "Adhesivo de montaje resistente 250ml",
+    "precio": [{"valor": 3990, "fecha": "2025-05-23"}],
+    "imagen": "FA-001.jpg",
+    "categoria": "basico",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "EM-001",
+    "marca": "Stanley",
+    "codigo": "STN-1617",
+    "nombre": "Wincha de medicion 5m",
+    "precio": [{"valor": 4990, "fecha": "2025-05-23"}],
+    "imagen": "EM-001.jpg",
+    "categoria": "seguridad",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "EM-002",
+    "marca": "Bosch",
+    "codigo": "BOS-1718",
+    "nombre": "Nivel laser autonivelante",
+    "precio": [{"valor": 89990, "fecha": "2025-05-23"}],
+    "imagen": "EM-002.jpg",
+    "categoria": "seguridad",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "MC-007",
+    "marca": "Revestek",
+    "codigo": "RVT-1819",
+    "nombre": "Estuco interior 25kg",
+    "precio": [{"valor": 6890, "fecha": "2025-05-23"}],
+    "imagen": "MC-007.jpg",
+    "categoria": "basico",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "HM-004",
+    "marca": "Irwin",
+    "codigo": "IRW-1920",
+    "nombre": "Juego de llaves combinadas 8 piezas",
+    "precio": [{"valor": 22990, "fecha": "2025-05-23"}],
+    "imagen": "HM-004.jpg",
+    "categoria": "manual",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "HE-004",
+    "marca": "Black+Decker",
+    "codigo": "BDK-2021",
+    "nombre": "Taladro inalambrico 12V",
+    "precio": [{"valor": 47990, "fecha": "2025-05-23"}],
+    "imagen": "HE-004.jpg",
+    "categoria": "manual",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "ES-005",
+    "marca": "Segupro",
+    "codigo": "SGP-2122",
+    "nombre": "Botas de seguridad punta de acero",
+    "precio": [{"valor": 29990, "fecha": "2025-05-23"}],
+    "imagen": "ES-005.jpg",
+    "categoria": "seguridad",
+    "cantidad": 0
+  },
+  {
+    "codigo_producto": "FA-002",
+    "marca": "Sika",
+    "codigo": "SIK-2223",
+    "nombre": "Silicona sellante blanco 280ml",
+    "precio": [{"valor": 3490, "fecha": "2025-05-23"}],
+    "imagen": "FA-002.jpg",
+    "categoria": "basico",
+    "cantidad": 0
+  }
+]

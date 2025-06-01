@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pago Simulado Webpay</title>
+</head>
+<body>
+  <h1>Pago Simulado Webpay</h1>
+  <div id="datosPago">Cargando...</div>
+  <button id="btnPagar" disabled>Pagar ahora</button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const token = sessionStorage.getItem('token_ws');
+      const orden = sessionStorage.getItem('orden_compra');
+      const monto = sessionStorage.getItem('monto');
+
+      const datosPago = document.getElementById('datosPago');
+      const btnPagar = document.getElementById('btnPagar');
+
+      if (token && orden && monto) {
+        datosPago.innerHTML = `
+          <p>Procesando pago para token: <strong>${token}</strong></p>
+          <p>Orden: <strong>${orden}</strong></p>
+          <p>Monto: <strong>$${monto}</strong></p>
+        `;
+        btnPagar.disabled = false;
+      } else {
+        datosPago.textContent = "No hay datos para procesar el pago.";
+      }
+
+      btnPagar.onclick = function() {
+        alert('Pago simulado realizado con éxito.');
+        sessionStorage.clear();
+        datosPago.textContent = 'Pago realizado. Gracias por su compra.';
+        btnPagar.disabled = true;
+      };
+    });
+  </script>
+</body>
+</html>

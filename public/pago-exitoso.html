@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pago Exitoso</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e8f5e9;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+
+    h2 {
+      color: #2e7d32;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .ok {
+      font-size: 40px;
+      color: #43a047;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="ok">✅</div>
+    <h2>¡Pago realizado con éxito!</h2>
+    <p id="orden"></p>
+    <p id="fecha"></p>
+    <p id="producto"></p>
+    <p id="total"></p>
+    <p><strong>Estado:</strong> Aprobado ✅</p>
+  </div>
+
+  <script>
+    // Generar número de orden aleatorio
+    const orden = Math.floor(Math.random() * 1000000) + 100000;
+
+    // Obtener fecha actual
+    const fecha = new Date();
+    const fechaTexto = fecha.toLocaleDateString('es-CL', {
+      year: 'numeric', month: 'long', day: 'numeric',
+      hour: '2-digit', minute: '2-digit'
+    });
+
+    // Obtener datos desde sessionStorage
+    const producto = sessionStorage.getItem("producto") || "Producto desconocido";
+    const total = sessionStorage.getItem("total") || "0";
+
+    // Mostrar datos en la página
+    document.getElementById("orden").textContent = "Número de orden: " + orden;
+    document.getElementById("fecha").textContent = "Fecha: " + fechaTexto;
+    document.getElementById("producto").textContent = "Producto: " + producto;
+    document.getElementById("total").textContent = "Total pagado: $" + total;
+  </script>
+
+</body>
+</html>

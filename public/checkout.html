@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carrito de Compra</title>
+</head>
+<body>
+  <h1>Resumen de Compra</h1>
+
+  <p><strong>Producto:</strong> Taladro eléctrico</p>
+  <p><strong>Monto total:</strong> $17.980</p>
+
+  <button id="btnPagar">Pagar con Webpay</button>
+
+  <script>
+    document.getElementById('btnPagar').addEventListener('click', () => {
+      // Estos valores podrían venir dinámicamente desde tu carrito
+      const monto = 17980;
+      const ordenCompra = 'orden' + Date.now(); // Generar ID único
+      const sessionId = 'sesion' + Math.floor(Math.random() * 100000);
+
+      fetch('/crearTransaccion', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ monto, ordenCompra, sessionId })
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.url && data.token) {
+            // Redirigimos al formulario de Webpay enviando el token
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = data.url;
+
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'token_ws';
+            input.value = data.token;
+            form.appendChild(input);
+
+            document.body.appendChild(form);
+            form.submit(); // Redirige automáticamente a Webpay
+          } else {
+            alert('Error al crear la transacción.');
+          }
+        })
+        .catch(err => {
+          console.error('Error creando transacción:', err);
+          alert('Error al iniciar el pago.');
+        });
+    });
+  </script>
+</body>
+</html>

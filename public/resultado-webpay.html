@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Resultado de Pago Webpay</title>
+</head>
+<body>
+  <h1>Resultado del Pago</h1>
+  <div id="resultado">Cargando resultado...</div>
+
+  <script>
+    // Webpay envía por POST un formulario con variables como token_ws, vci, etc.
+    // Aquí vamos a obtener el token_ws y hacer una consulta al backend para validar el pago (ideal).
+
+    // Pero como estamos en frontend, solo mostramos los parámetros recibidos:
+
+    // Obtener parámetros POST enviados (en JS puro no es trivial; 
+    // normalmente lo hace tu backend para luego mostrar el resultado)
+
+    // Como alternativa rápida para demo, puedes simular que vienen por query string:
+    // Ejemplo: resultado-webpay.html?token_ws=XXX&vci=YYY
+
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.has('token_ws')) {
+      const token_ws = params.get('token_ws');
+      const vci = params.get('vci') || 'No disponible';
+      const status = params.get('status') || 'Desconocido';
+
+      document.getElementById('resultado').innerHTML = `
+        <p><strong>Token WS:</strong> ${token_ws}</p>
+        <p><strong>VCI:</strong> ${vci}</p>
+        <p><strong>Status:</strong> ${status}</p>
+        <p>Gracias por su compra.</p>
+      `;
+    } else {
+      document.getElementById('resultado').textContent = 'No se recibieron datos de pago.';
+    }
+  </script>
+</body>
+</html>

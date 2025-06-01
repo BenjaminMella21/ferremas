@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulación Webpay</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div style="text-align: center; padding: 50px;">
+        <h2>Simulación de Pago Webpay</h2>
+        <p>Orden: <span id="orden"></span></p>
+        <p>Monto a pagar: <strong>$<span id="monto"></span></strong></p>
+
+        <button onclick="confirmarPago()">Pagar</button>
+        <button onclick="cancelarPago()">Cancelar</button>
+    </div>
+
+    <script>
+        const monto = sessionStorage.getItem("webpay_monto");
+        const orden = sessionStorage.getItem("webpay_orden");
+
+        document.getElementById("monto").textContent = parseInt(monto).toLocaleString();
+        document.getElementById("orden").textContent = orden;
+
+        function confirmarPago() {
+            sessionStorage.setItem("webpay_estado", "exito");
+            window.location.href = "confirmacion.html";
+        }
+
+        function cancelarPago() {
+            sessionStorage.setItem("webpay_estado", "rechazado");
+            window.location.href = "confirmacion.html";
+        }
+    </script>
+</body>
+</html>

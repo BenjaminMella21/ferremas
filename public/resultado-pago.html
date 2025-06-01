@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Resultado de Pago</title>
+</head>
+<body>
+  <h1>Resultado de Pago Webpay</h1>
+  <div id="resultado">Cargando resultado...</div>
+
+  <script>
+    // El token_ws Webpay lo envía Webpay como POST a tu backend.
+    // Aquí simplificamos con fetch para simular llamada a backend que procesa token_ws.
+
+    // URL actual, por ejemplo: http://localhost:3000/resultado-pago?token_ws=xxxx
+    // Si usas GET, necesitarás modificar backend o obtener token_ws desde querystring.
+
+    // Aquí asumimos que token_ws viene por URL (puedes adaptar si usas POST)
+    const params = new URLSearchParams(window.location.search);
+    const token_ws = params.get('token_ws');
+
+    if (!token_ws) {
+      document.getElementById('resultado').textContent = 'No se recibió token de pago.';
+    } else {
+      fetch('/resultado-pago', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: `token_ws=${encodeURIComponent(token_ws)}`
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.error) {
+          document.getElementById('resultado').textContent = 'Error: ' + data.error;
+        } else {
+          document.getElementById('resultado').innerHTML = `
+            <p><strong>Estado:</strong> ${data.detailOutput.responseCode === 0 ? 'Pago aprobado' : 'Pago rechazado'}</p>
+            <p><strong>Número de autorización:</strong> ${data.detailOutput.authorizationCode}</p>
+            <p><strong>ID de compra:</strong> ${data.buyOrder}</p>
+            <p><strong>Monto:</strong> $${data.detailOutput.amount}</p>
+            <p>Gracias por su compra.</p>
+          `;
+        }
+      })
+      .catch(error => {
+        document.getElementById('resultado').textContent = 'Error al consultar resultado.';
+        console.error(error);
+      });
+    }
+  </script>
+</body>
+</html>

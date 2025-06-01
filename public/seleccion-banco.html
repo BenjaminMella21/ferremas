@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Selecciona tu banco</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef1f5;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    select, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Selecciona tu banco</h2>
+    <p>Producto: <strong><span id="producto"></span></strong></p>
+    <p>Total: $<strong><span id="total"></span></strong></p>
+
+    <select id="banco">
+      <option disabled selected>Selecciona tu banco</option>
+      <option>BancoEstado</option>
+      <option>Banco de Chile</option>
+      <option>BCI</option>
+      <option>Scotiabank</option>
+      <option>Santander</option>
+    </select>
+
+    <button onclick="continuarPago()">Continuar con el pago</button>
+  </div>
+
+  <script>
+    document.getElementById("producto").textContent = sessionStorage.getItem("producto");
+    document.getElementById("total").textContent = sessionStorage.getItem("total");
+
+    function continuarPago() {
+      const banco = document.getElementById("banco").value;
+      if (banco === "Selecciona tu banco") {
+        alert("Por favor, selecciona un banco.");
+        return;
+      }
+      sessionStorage.setItem("banco", banco);
+      window.location.href = "finalizar-pago.html";
+    }
+  </script>
+
+</body>
+</html>

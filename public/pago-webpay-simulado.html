@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Simulador Pago Webpay</title>
+</head>
+<body>
+    <h1>Página Simulada Webpay</h1>
+    <p>Procesando pago para token: <span id="tokenDisplay"></span></p>
+    <p>Monto: $<span id="montoDisplay"></span></p>
+    <button onclick="irASimulacion()">Pagar ahora</button>
+
+    <script>
+        // Obtener token del POST (simulado con sessionStorage)
+        const token = sessionStorage.getItem("token_ws");
+        const monto = sessionStorage.getItem("monto");
+        const orden = sessionStorage.getItem("orden_compra");
+        const urlParams = new URLSearchParams(window.location.search);
+        const total = urlParams.get("total");
+
+        document.getElementById("tokenDisplay").textContent = token;
+        document.getElementById("montoDisplay").textContent = monto;
+
+        document.getElementById("btnConfirmar").onclick = function() {
+            // Simular redirección a página de confirmación con datos
+            // Normalmente Webpay redirige con datos POST, aquí usamos GET para simular
+            const urlConfirmacion = `confirmacion.html?token_ws=${token}&orden_compra=${orden}&monto=${monto}&estado=APROBADO`;
+            window.location.href = urlConfirmacion;
+        }
+    </script>
+    <script>
+function irASimulacion() {
+  // Guarda los datos en sessionStorage
+  sessionStorage.setItem("producto", "Zapatillas Nike");
+  sessionStorage.setItem("total", "39990");
+
+  // Redirige
+  window.location.href = "pago-webpay-simulado.html";
+}
+</script>
+</body>
+</html>
